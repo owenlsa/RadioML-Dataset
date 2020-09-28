@@ -4,7 +4,7 @@
 
 ```bash
 - GNRradio 3.7.11
-- gr-mapper
+- gr-mapper (use the version in this project)
 - gr-mediatools
 ```
 
