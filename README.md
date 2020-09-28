@@ -2,11 +2,9 @@
 
 ## Requirements
 
-```bash
 - GNRradio 3.7.11
 - gr-mapper (use the version in this project)
 - gr-mediatools
-```
 
 ## Environment (Docker Recommended)
 
