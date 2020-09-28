@@ -1,7 +1,8 @@
+# gr-mapper Module
 
 > This out of tree module contains a number of blocks to help perform mapping between bits and symbolsThis out of tree module contains a number of blocks to help perform mapping between bits and symbols
 
-##### This version is used to generate RML2016.10a_dict dataset, almost same data feature with original open dataset.
+This version is used to generate RML2016.10a_dict dataset, almost same data feature with original open dataset
 
 Based on [[1] gr-vt/gr-mapper Commit 52383e2][1] **without**"normalize constellation power to 1"related code in *gr-mapper\lib\constellation.cc line 75-81*.
 
