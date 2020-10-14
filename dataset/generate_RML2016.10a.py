@@ -10,9 +10,7 @@ import random
 '''
 Generate dataset with dynamic channel model across range of SNRs
 '''
-outputFile = "RML2016.10a-Lin.dat"
-
-apply_channel = True
+outputFile = "RML2016.10a-Lin-99.dat"
 
 dataset = {}
 
@@ -22,9 +20,16 @@ dataset = {}
 # CIFAR-10 has 6000 samples/class. CIFAR-100 has 600. Somewhere in there seems like right order of magnitude
 nvecs_per_key = 1000
 vec_length = 128 # default 128
-snr_vals = range(-20,20,2)
+snr_vals = range(-20, 21, 2)  # default (-20,20,2) -> -20~18db. Now: -20~20
+snr_vals.extend([99])  # add 99db
 for snr in snr_vals:
-    print "snr is ", snr
+    print "snr is ", snr,
+    if snr == 99:
+        print " >  pure signal"
+        apply_channel = False
+    else:
+        print " >  channel"
+        apply_channel = True
     for alphabet_type in transmitters.keys():
         for i,mod_type in enumerate(transmitters[alphabet_type]):
           dataset[(mod_type.modname, snr)] = np.zeros([nvecs_per_key, 2, vec_length], dtype=np.float32)
